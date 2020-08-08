@@ -1,11 +1,35 @@
-export type ReducerProps = {
-    state: any,
-    action: {
-        type: string,
-        payload?: string 
+import {combineReducers} from 'redux'
+import {
+    PostsState,
+    PostsActionTypes,
+    GET_POST,
+    GET_POSTS,
+    Post
+} from '../types'
+
+const initialState: PostsState = {
+    posts: [],
+    post: {}
+}
+
+export const postReducer = (state = initialState, action: PostsActionTypes):PostsState => {
+    switch (action.type) {
+        case GET_POSTS:
+            return {
+                ...state,
+                posts: action.payload
+            }
+        case GET_POST:
+            return {
+                ...state,
+                post: action.payload
+            }
+        default:
+            return state
     }
 }
 
-const reducer<ReducerProps> = (state: {}, action) => {
-    switch (action.type)
-}
+export const RootReducer = combineReducers({
+    post: postReducer,
+    posts: postReducer
+})
