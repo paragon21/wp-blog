@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #3a3a3a;
+  color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  font-size: 4.3rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #bbbbbb;
+}
