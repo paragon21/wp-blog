@@ -8,9 +8,8 @@ export const getPost = (post: Post): PostsActionTypes => {
     })
 }
 
-export const getPosts = (posts: Post[]): PostsActionTypes => {
+export const getPosts = (): PostsActionTypes => {
     return ({
         type: GET_POSTS,
-        payload: posts
     })
 }

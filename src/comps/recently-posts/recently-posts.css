@@ -1,0 +1,7 @@
+.recently-posts {
+    display: flex;
+}
+
+.recently-posts__card {
+    max-width: 30%;
+}

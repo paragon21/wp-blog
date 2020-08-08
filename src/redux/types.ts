@@ -10,7 +10,7 @@ export interface Post {
 }
 
 export interface PostsState {
-    posts: Post[] ,
+    posts: Post[] | undefined,
     post: Post | {}
 }
 
@@ -19,7 +19,7 @@ export const GET_POST = 'GET_POST'
 
 interface GetPostsAction {
     type: typeof GET_POSTS,
-    payload: Post[]
+    payload?: Post[] | undefined
 }
 
 interface GetPostAction {
