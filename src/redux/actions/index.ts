@@ -1,4 +1,4 @@
-import {Post, GET_POST, GET_POSTS, PostsActionTypes} from '../types'
+import {GET_POST, GET_POSTS, PostsActionTypes} from '../types'
 
 
 export const getPost = (post: number): PostsActionTypes => {

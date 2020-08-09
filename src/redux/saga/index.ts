@@ -1,5 +1,5 @@
-import { all, put, call, takeEvery, take } from 'redux-saga/effects'
-import { GET_POST, GET_POSTS, SET_POST, SET_POSTS, PostsActionTypes, GetPostAction} from '../types'
+import { all, put, call, takeEvery } from 'redux-saga/effects'
+import { GET_POST, GET_POSTS, SET_POST, SET_POSTS, GetPostAction} from '../types'
 
 //http://wp.vdovin28.beget.tech/wp-json/wp/v2/posts
 
@@ -13,8 +13,9 @@ export function* getPosts() {
                     throw new Error(`Err, ${err}`)
                 })
     })
-    yield put({type: SET_POST, payload: obj})
+    yield put({type: SET_POSTS, payload: obj})
 }
+
 
 export function* getPost(action: GetPostAction) {
     const obj = yield call (() => {
@@ -26,8 +27,10 @@ export function* getPost(action: GetPostAction) {
                     throw new Error(`Err, ${err}`)
                 })
     })
-    yield put({type: SET_POSTS, payload: obj})
+    yield put({type: SET_POST, payload: obj})
 }
+
+
 export function* watchPostsSaga() {
     yield takeEvery(GET_POSTS, getPosts);
     yield takeEvery(GET_POST, getPost);

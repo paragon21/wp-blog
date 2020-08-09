@@ -1,7 +1,8 @@
 export interface Post {
     id: number,
     date: string,
-    grid: {rendered: string},
+    guid: {rendered: string},
+    slug: string,
     type: string,
     link: string,
     title: {rendered: string},
@@ -38,5 +39,7 @@ export interface SetPostAction {
     type: typeof SET_POST,
     payload: Post
 }
+
+export type StoreType = PostsState
 
 export type PostsActionTypes = GetPostAction | GetPostsAction | SetPostsAction | SetPostAction

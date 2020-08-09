@@ -1,7 +1,61 @@
 .recently-posts {
+    font-family: 'Alegreya Sans', sans-serif;
     display: flex;
+    --card-color-1: #f7d052;
+    --card-color-2: #e89ce0;
+    --card-color-3: #d3ccfc;
+    --card-color-4: #90ddde;
+    --card-color-5: #8cc3fa;
+    --card-color-6: #faa489;
 }
 
 .recently-posts__card {
-    max-width: 30%;
+    max-width: 20%;
+    margin: .5rem;
+    border-radius: 7px;
+    padding: 1.5rem;
+}
+
+.recently-posts__header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #4b4b4b;
+    opacity: .8;
+}
+
+.recently-posts__subheader {
+    font-size: .8rem;
+    font-weight: bolder;
+    color: #747474;
+
+}
+
+.recently-posts__body {
+    color: #4b4b4b;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.recently-posts__card_yellow {
+    background-color: var(--card-color-1);
+}
+
+.recently-posts__card_pink {
+    background-color: var(--card-color-2);
+}
+
+.recently-posts__card_lightviolet {
+    background-color: var(--card-color-3);
+}
+
+.recently-posts__card_sky {
+    background-color: var(--card-color-4);
+}
+
+.recently-posts__card_blue {
+    background-color: var(--card-color-5);
+}
+
+.recently-posts__card_coral {
+    background-color: var(--card-color-6);
 }
