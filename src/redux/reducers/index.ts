@@ -2,8 +2,8 @@ import {combineReducers} from 'redux'
 import {
     PostsState,
     PostsActionTypes,
-    GET_POST,
-    GET_POSTS,
+    SET_POST,
+    SET_POSTS,
     Post
 } from '../types'
 
@@ -14,12 +14,12 @@ const initialState: PostsState = {
 
 export const postReducer = (state = initialState, action: PostsActionTypes):PostsState => {
     switch (action.type) {
-        case GET_POSTS:
+        case SET_POSTS:
             return {
                 ...state,
                 posts: action.payload
             }
-        case GET_POST:
+        case SET_POST:
             return {
                 ...state,
                 post: action.payload

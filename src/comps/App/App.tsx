@@ -27,8 +27,7 @@ function App<FunctionComponent>(props: IAppProps) {
         <Header />
         <h1> Блог по IT, <br /> инструкции, мануалы, <br /> оптимизации </h1>
         <h2> + много чего еще</h2>
-      </Container>
-      
+      </Container>     
     </div>
   );
 }
