@@ -24,7 +24,7 @@ const RecentlyPosts: FunctionComponent<IRecentlyPostsProps> = (props) => {
         //     console.log(elem)
         // }
         console.log(elem.parentNode)
-        
+
     }
 
     if (!props.posts) {
@@ -35,7 +35,7 @@ const RecentlyPosts: FunctionComponent<IRecentlyPostsProps> = (props) => {
                 {
                     props.posts.map(post => {
                         return (
-                            <div onClick={clickHandler} key={post.guid.rendered} className={`recently-posts__card recently-posts__card_${randomColor()}`}>
+                            <div data-link={post.slug} onClick={clickHandler} key={post.guid.rendered} className={`recently-posts__card recently-posts__card_${randomColor()}`}>
                                 <header className="recently-posts__header"
                                     dangerouslySetInnerHTML={{ __html: post.title.rendered }}>
                                 </header>

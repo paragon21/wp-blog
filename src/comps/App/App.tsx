@@ -47,10 +47,6 @@ const App: FunctionComponent<IAppProps> = (props: IAppProps) => {
 }
 
 
-
-
-
-
 const mapStateToProps = (state: PostsState) => ({ ...state })
 
 const mapDispatchtoProps = (dispatch: Dispatch<PostsActionTypes>) => ({
