@@ -1,0 +1,47 @@
+.posts-container {
+    font-family: 'Alegreya Sans', sans-serif;
+    margin: 0 auto;
+    justify-content: center;
+    display: grid;
+
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(10, 5rem);
+    grid-template-rows: repeat(10, 5rem);
+    --card-color-1: #f7d052;
+    --card-color-2: #e89ce0;
+    --card-color-3: #d3ccfc;
+    --card-color-4: #90ddde;
+    --card-color-5: #8cc3fa;
+    --card-color-6: #faa489;
+}
+
+.posts-container__card {
+    border-radius: 7px;
+    padding: 1.5rem;
+}
+
+.posts-container .posts-container__card:first-child {
+    background-color: var(--card-color-1);
+    grid-area: 2/1/5/4;
+}
+
+.posts-container .posts-container__card:nth-child(2) {
+    background-color: var(--card-color-2);
+    grid-area: 1/4/4/7;
+}
+
+.posts-container .posts-container__card:nth-child(3) {
+    background-color: var(--card-color-3);
+    grid-area: 2/7/4/11;
+}
+
+.posts-container .posts-container__card:nth-child(4) {
+    background-color: var(--card-color-4);
+    grid-area: 5/1/7/4;
+}
+
+.posts-container a {
+   display: block;
+   text-decoration: none; 
+}
+

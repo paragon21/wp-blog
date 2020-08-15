@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import './error-handler.css'
+import React, { Component } from 'react'
+import './error-boundary.css'
 
 interface IErrorHandlerProps {
     children?: JSX.Element

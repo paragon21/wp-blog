@@ -12,8 +12,8 @@ import {
 import { connect } from 'react-redux'
 import Container from '../container'
 import Header from '../header'
-import RecentlyPosts from '../recently-posts'
-import ErrorHandler from '../error-handler'
+import RecentlyPosts from '../posts-container'
+import ErrorHandler from '../error-boundary'
 import { PostsActionTypes, PostsState } from '../../redux/types'
 import { getPosts } from '../../redux/actions'
 
@@ -37,6 +37,9 @@ const App: FunctionComponent<IAppProps> = (props: IAppProps) => {
               <Header />
               <h1> Блог по IT, <br /> инструкции, мануалы, <br /> оптимизации </h1>
               <h2> + много чего еще</h2>
+
+              {/* posts start here */}
+              
               <RecentlyPosts />
             </Container>
           </ErrorHandler>

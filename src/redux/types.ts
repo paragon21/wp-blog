@@ -1,17 +1,17 @@
 export interface Post {
     id: number,
     date: string,
-    guid: {rendered: string},
+    guid: { rendered: string },
     slug: string,
     type: string,
     link: string,
-    title: {rendered: string},
-    content: {rendered: string},
-    excerpt: {rendered: string}
+    title: { rendered: string },
+    content: { rendered: string },
+    excerpt: { rendered: string }
 }
 
 export interface PostsState {
-    posts: Post[] | undefined,
+    posts: Post[],
     post: Post | {}
 }
 
