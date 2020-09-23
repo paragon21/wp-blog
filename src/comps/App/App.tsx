@@ -13,6 +13,7 @@ import { connect } from 'react-redux'
 import Container from '../container'
 import Header from '../header'
 import RecentlyPosts from '../posts-container'
+import BlogPost from '../blog-post'
 import ErrorHandler from '../error-boundary'
 import { PostsActionTypes, PostsState } from '../../redux/types'
 import { getPosts } from '../../redux/actions'
@@ -44,6 +45,9 @@ const App: FunctionComponent<IAppProps> = (props: IAppProps) => {
             </Container>
           </ErrorHandler>
       </div>
+      </Route>
+      <Route path={`/post/:postID`}>
+        <BlogPost />
       </Route>
     </Router>
   );

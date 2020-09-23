@@ -18,6 +18,8 @@
 .posts-container__card {
     border-radius: 7px;
     padding: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .posts-container .posts-container__card:first-child {

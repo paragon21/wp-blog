@@ -3,43 +3,36 @@ import React, {
     useState,
     useEffect
 } from 'react'
+import {
+    useRouteMatch,
+    useParams,
+    RouteComponentProps
+} from 'react-router-dom'
+import Loader from '../loader'
+import {connect} from 'react-redux'
+import {StoreType, Post} from '../../redux/types'
 
-interface IBlogPost {
-    id: number,
-    title: {rendered: string},
-    content: {rendered: string},
-}
+interface iBlogPostsProps {
+    posts?: Post[] 
+} 
 
-const BlogPost: FunctionComponent = () => {
+const BlogPost: FunctionComponent<iBlogPostsProps> = ({posts}: iBlogPostsProps) => {
 
-    const [post, setPost] = useState<IBlogPost | undefined>()
+    const {postID} = useParams()
 
-    useEffect( () => {
-        (async () => {
-            const answer = await fetch('http://wp.vdovin28.beget.tech/wp-json/wp/v2/posts/1')
-            if (answer.ok) {
-                const post = await answer.json()
-                setPost(post)
-            }
-        })();
-    }, [])
-
-
-    if (!post) {
-
-        return null
-
-    } else {
-
-        return (
-            <div className="blog-post">
-                <div className="blog-post__inner">
-                    <h3 className="blog-post__header">{post.title.rendered}</h3>
-                    <div className="blog-post__body" dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
-                </div>
-            </div>
-        )
+    if (posts) {
+        console.log(posts.filter(i => decodeURI(i.slug) === postID)[0])
     }
+
+    if (!posts) {
+        return <Loader />
+    } else {
+        return <div></div>
+    }
+
 }
 
-export default BlogPost
+
+const mapStateToProps = (state: StoreType) => ({...state})
+
+export default connect(mapStateToProps, null)(BlogPost)

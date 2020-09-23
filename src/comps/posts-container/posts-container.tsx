@@ -20,12 +20,15 @@ const randomColor = (): string => {
 const RecentlyPosts: FunctionComponent<IRecentlyPostsProps> = (props) => {
     
     const { posts } = props
-    return (!posts) ? <Loader /> : 
-        <div className="posts-container">
-            {
-                posts.map( post => <PostCard key={post.id} color={randomColor()} post={post} /> )
-            }
-        </div>
+    return (!posts) 
+        ? <Loader /> 
+        : ( 
+            <div className="posts-container">
+                {
+                    posts.map( post => <PostCard key={post.id} color={randomColor()} post={post} /> )
+                }
+            </div>
+        )
 }
 
 RecentlyPosts.defaultProps = {

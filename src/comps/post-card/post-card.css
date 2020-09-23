@@ -1,8 +1,19 @@
+.posts-container__card {
+    position: relative;
+}
+
+.posts-container__card_fade {
+    z-index: 99;
+    position: absolute;
+    bottom: 0px;
+    background: url('/img/bottom-fade.png');
+}
+
 .post-card {
     box-sizing: border-box;
     overflow: hidden;
     white-space: wrap;
-    text-overflow: ellipsis
+    text-overflow: ellipsis;
 }
 
 .post-card__header {
@@ -20,5 +31,4 @@
 .post-card__body {
     color: black;
     overflow: hidden;
-    white-space: nowrap;
 }
