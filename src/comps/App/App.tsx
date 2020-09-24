@@ -7,13 +7,14 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom"
 import { connect } from 'react-redux'
 import Container from '../container'
 import Header from '../header'
 import RecentlyPosts from '../posts-container'
-import BlogPost from '../blog-post'
+import Atricle from '../article/article'
 import ErrorHandler from '../error-boundary'
 import { PostsActionTypes, PostsState } from '../../redux/types'
 import { getPosts } from '../../redux/actions'
@@ -47,7 +48,7 @@ const App: FunctionComponent<IAppProps> = (props: IAppProps) => {
       </div>
       </Route>
       <Route path={`/post/:postID`}>
-        <BlogPost />
+        <Atricle />
       </Route>
     </Router>
   );
