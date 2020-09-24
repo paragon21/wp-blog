@@ -11,6 +11,7 @@ import {
 import Loader from '../loader'
 import {connect} from 'react-redux'
 import {StoreType, Post} from '../../redux/types'
+import './blog-post.css'
 
 interface iBlogPostsProps {
     posts?: Post[] 
@@ -19,15 +20,17 @@ interface iBlogPostsProps {
 const BlogPost: FunctionComponent<iBlogPostsProps> = ({posts}: iBlogPostsProps) => {
 
     const {postID} = useParams()
-
-    if (posts) {
-        console.log(posts.filter(i => decodeURI(i.slug) === postID)[0])
-    }
-
-    if (!posts) {
-        return <Loader />
+  
+    if (posts!.length > 0) {
+        return (
+            <div className="plog-post">
+                {/* <header className="blog-post__header"></header>
+                <h3>{posts.title.rendered}</h3> */}
+                {console.log(posts?.filter(i => decodeURI(i.slug) == postID))}
+            </div>
+        )
     } else {
-        return <div></div>
+        return <Loader /> 
     }
 
 }
