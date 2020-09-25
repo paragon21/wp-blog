@@ -4,23 +4,19 @@ import React, {
 import './posts-container.css'
 import Loader from '../loader'
 import PostCard from '../post-card'
-import { connect } from 'react-redux'
-import { StoreType, Post } from '../../redux/types'
-
-
-interface IRecentlyPostsProps {
-    posts?: Post[]
-}
+import { connect, useStore } from 'react-redux'
+import { Post } from '../../redux/types'
 
 const randomColor = (): string => {
     let colors: string[] = ['yellow', 'pink', 'lightviolet', 'sky', 'blue', 'coral'];
     return colors[Math.floor(Math.random() * colors.length)]
 }
 
-const RecentlyPosts: FunctionComponent<IRecentlyPostsProps> = (props) => {
+const RecentlyPosts: FunctionComponent = () => {
     
-    const { posts } = props
-    return (!posts) 
+    const {posts}: {posts: Post[]} = useStore().getState()
+
+    return (posts.length == 0) 
         ? <Loader /> 
         : ( 
             <div className="posts-container">
@@ -31,10 +27,4 @@ const RecentlyPosts: FunctionComponent<IRecentlyPostsProps> = (props) => {
         )
 }
 
-RecentlyPosts.defaultProps = {
-    posts: []
-}
-
-const mapStateToProps = (state: StoreType) => ({ posts: state.posts })
-
-export default connect(mapStateToProps, null)(RecentlyPosts)
+export default RecentlyPosts
