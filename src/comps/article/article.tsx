@@ -13,11 +13,11 @@ const Article: FunctionComponent = () => {
     const {posts}: {posts: Post[]} = useStore().getState()
 
     var article = posts.filter(i => decodeURI(i.slug) === url)[0]
-
-    if (!article) return <Redirect to="/404" />
-
+    
     return (posts.length == 0)
         ? <Loader />
+        : !article 
+        ? <Redirect to="/404" />
         : (
             <div className="article">
                     <header className="article__header"></header>
