@@ -14,7 +14,6 @@ class ErrorHandler extends Component<IErrorHandlerProps, IErrorHandlerState> {
         error: false
     }
    
-
     componentDidCatch(err: Error) {
         this.setState(prev => ({...this.state, error: !prev.error}))
         console.error(err)
@@ -22,14 +21,9 @@ class ErrorHandler extends Component<IErrorHandlerProps, IErrorHandlerState> {
 
     render() {
         const err = this.state.error
-
-        if (err) {
-            return <div>Error!</div>
-        } else {
-            return (
-                this.props.children
-            )
-        }
+        return err 
+            ? <div>Error!</div>
+            : this.props.children
     }
     
 }

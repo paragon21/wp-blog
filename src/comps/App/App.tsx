@@ -45,7 +45,7 @@ const App: FunctionComponent<IAppProps> = (props: IAppProps) => {
               <RecentlyPosts />
             </Container>
           </ErrorHandler>
-      </div>
+        </div>
       </Route>
       <Route path={`/post/:postID`}>
         <Atricle />

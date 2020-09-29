@@ -1,5 +1,5 @@
 import { all, put, call, takeEvery } from 'redux-saga/effects'
-import { GET_POST, GET_POSTS, SET_POST, SET_POSTS, GetPostAction} from '../types'
+import { GET_POST, GET_POSTS, SET_POST, SET_POSTS, GetPostAction } from '../types'
 
 //http://wp.vdovin28.beget.tech/wp-json/wp/v2/posts
 

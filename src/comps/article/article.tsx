@@ -3,16 +3,16 @@ import React, {
     useState,
     useEffect
 } from 'react'
-import {useStore} from 'react-redux'
-import {useParams, Redirect} from 'react-router-dom'
-import {Post} from '../../redux/types'
+import { useStore } from 'react-redux'
+import { useParams, Redirect } from 'react-router-dom'
+import { Post } from '../../redux/types'
 import Loader from '../loader'
 
 const Article: FunctionComponent = () => {
-    const {postID: url} = useParams()
-    const {posts}: {posts: Post[]} = useStore().getState()
+    const { postID: url } = useParams()
+    const { posts }: { posts: Post[] } = useStore().getState()
 
-    var article = posts.filter(i => decodeURI(i.slug) === url)[0]
+    const article = posts.filter(i => decodeURI(i.slug) === url)[0]
     
     return (posts.length == 0)
         ? <Loader />
