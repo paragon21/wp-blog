@@ -1,0 +1,38 @@
+.article {
+  padding: 0 3rem;
+}
+
+.article__header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 3rem;
+    margin: 0 -3rem;
+}
+
+.article_goback {
+    align-self: center;
+    font-size: 22px;
+    display: block;
+    width: 6rem;
+    padding: .3rem;
+    color: #e7e8ed;
+    text-decoration: none;
+    transition: border ease-in .1s;
+}
+
+.article_goback:hover {
+    border: 1px solid #e7e8ed;
+}
+
+.article__body {
+    padding: 1rem 2rem;
+    font-weight: 500;
+    color: rgb(49, 47, 47);
+    min-height: calc(100vh - 3rem);
+    background-color: #e7e8ed;
+}
+
+.article_content h1, h2, h3, h4 {
+    color: rgb(49, 47, 47);
+}
